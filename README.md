@@ -5,7 +5,8 @@ This repo demonstrates the basic usage of MongoDB via a small test database host
 #### Requirements:
 
 - Python3
-- Latest MongoDB server running locally (See install instructions for MongoDB to set this up)
+- Latest MongoDB server running locally (See install instructions for MongoDB to set this up) or, alternatively:
+- An interactive environment like Cloud9 with MongoDB support
 - PyMongo (`sudo pip3 install pymongo`)
 
 #### Setup:
@@ -14,10 +15,19 @@ This repo demonstrates the basic usage of MongoDB via a small test database host
 - Create a database called mytestdb
 - Create a collection called myFirstMDB
 - Add some documents to your collection
+- Documents should have the following fields in order for `mongo_crud.py` to function properly:
+    - first
+    - last
+    - dob
+    - gender
+    - hair_color
+    - occupation
+    - nationality
 - `export MONGO_URI=[your database url from mlab with username/password]` (for Windows machines, use `set` in place of `export`)
 
 #### Usage:
-
-- `python3 mongo.py`
-
-If your database 
+    # Test your Mongo connection (you should see a data dump if it's configured correctly)
+    python3 mongo_test.py
+    
+    # Run a simple command line app for CRUD operations on the DB
+    python3 mongo_crud.py
