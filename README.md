@@ -12,10 +12,10 @@ This repo demonstrates the basic usage of MongoDB via a small test database host
 #### Setup:
 
 - Create a test MongoDB at https://www.mlab.com (Use the AWS free tier)
-- Create a database called mytestdb
-- Create a collection called myFirstMDB
-- Add some documents to your collection
-- Documents should have the following fields in order for `mongo_crud.py` to function properly:
+- Create a database called mytestdb (or change `mongo_crud.py` connection info to match your DB info)
+- Create a collection called myFirstMDB (or change `mongo_crud.py` connection info to match your DB info)
+- Add some documents to your collection (for faster rollout you may wish to use the sampledata.txt data. Just copy/paste it at your Mongo prompt)
+- If you add your own, documents should have the following fields in order for `mongo_crud.py` to function properly:
     - first
     - last
     - dob
@@ -23,7 +23,7 @@ This repo demonstrates the basic usage of MongoDB via a small test database host
     - hair_color
     - occupation
     - nationality
-- `export MONGO_URI=[your database url from mlab with username/password]` (for Windows machines, use `set` in place of `export`)
+- `export MONGODB_URI=[your database url from mlab with username/password]` (for Windows machines, use `set` in place of `export`)
 
 #### Usage:
     # Test your Mongo connection (you should see a data dump if it's configured correctly)

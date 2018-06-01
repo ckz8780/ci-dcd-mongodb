@@ -73,7 +73,7 @@ def find_record():
             if k != "_id":
                 print(k.capitalize() + ": " + v.capitalize())
 
-# Update/edit a record
+# Update/edit a specific record by first/last name
 def edit_record():
     doc = get_record()
     if doc:
@@ -93,7 +93,8 @@ def edit_record():
             print("Document updated")
         except Exception as e:
             print("Error updating record: {}".format(e))
-        
+
+# Delete a record by first/last name, with confirmation        
 def delete_record():
     doc = get_record()
     if doc:
@@ -114,7 +115,8 @@ def delete_record():
                 print("Error deleting record: {}".format(e))
         else:
             print("User cancelled operation...document not deleted!")
-            
+
+# Menu loop            
 def main_loop():
     while True:
         option = show_menu()
@@ -133,7 +135,7 @@ def main_loop():
             print("Invalid option")
         print("")
 
+# Script init
 conn = mongo_connect(MONGODB_URI)
 coll = conn[DBS_NAME][COLLECTION_NAME]
-
 main_loop()
